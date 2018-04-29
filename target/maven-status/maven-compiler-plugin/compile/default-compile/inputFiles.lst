@@ -1,1 +1,10 @@
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Services/UserService.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Dao/IUserDao.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Servlets/LoginServlet.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Dao/AbstractDao.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Services/Exceptions/InvalidUserException.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Model/User.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Dao/UserDao.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Servlets/AbstractServlet.java
+/home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Services/IUserService.java
 /home/vault-tec/Documents/Develop/js2/src/main/java/com/codecool/Listener/WebappContextListener.java
