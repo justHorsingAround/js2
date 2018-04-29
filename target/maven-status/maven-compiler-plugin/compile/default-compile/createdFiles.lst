@@ -1,5 +1,6 @@
 com/codecool/Dao/UserDao.class
 com/codecool/Model/User.class
+com/codecool/Model/Poem.class
 com/codecool/Listener/WebappContextListener.class
 com/codecool/Servlets/LoginServlet.class
 com/codecool/Dao/AbstractDao.class

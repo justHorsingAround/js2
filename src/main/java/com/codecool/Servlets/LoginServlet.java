@@ -35,7 +35,7 @@ public final class LoginServlet extends AbstractServlet {
 
             User user = uService.loginUser(email, password);
             req.getSession().setAttribute("user", user);
-            System.out.println("user ok");
+            System.out.println(user);
 
 
         } catch (SQLException e) {
