@@ -102,6 +102,10 @@ function onLoad(){
     const loginButtonEl = document.getElementById('login-btn');
     loginButtonEl.addEventListener('click', onLoginButtonClicked);
 
+    /*if (hasAuthorization()) {
+        onProfileLoad(getAuthorization());
+    }*/
+
 }
 
 

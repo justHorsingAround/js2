@@ -18,14 +18,16 @@ public final class UserDao extends AbstractDao implements IUserDao {
     }
 
     public List<User> findAllUsers() throws SQLException {
+        List<User> users = new ArrayList<>();
         String sql = "SELECT id, email, nickname, password FROM users;";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
-            ResultSet resultSet = preparedStatement.executeQuery();
-            List<User> users = new ArrayList<>();
-            while (resultSet.next()){
-                users.add(assembleUser(resultSet));
+            try(ResultSet resultSet = preparedStatement.executeQuery()) {
+
+                while (resultSet.next()) {
+                    users.add(assembleUser(resultSet));
+                }
             }
-            return users;
+        return users;
         }
     }
 

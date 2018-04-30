@@ -26,8 +26,13 @@
 </div>
 <div id="main-content" class="hidden content">
     <div id="welcome"><p><h1>Welcome <span id="name"></span>! </h1></p></div>
-    <p>Email: <span id="email"></span></p>
-    <p>Password: <span id="password"></span></p>
+    <p>Your id: <span id="id"></span></p>
+    <p>Your email address: <span id="email"></span></p>
+    <p>Your secret password: <span id="password"></span></p>
+    <div id="titles">
+        <p><h3>Poems</h3><br>
+        <p><div="title-list"></div></p>
+    </div>
 </div>
 
 </body>

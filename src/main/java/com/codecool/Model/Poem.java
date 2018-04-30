@@ -1,46 +1,49 @@
 package com.codecool.Model;
 
 public class Poem {
-    private String poetName;
-    private String title;
-    private String textContent;
+   private int id;
+   private int poet_id;
+   private String title;
+   private String text;
+   private String date;
 
-    public Poem(String poetName, String title, String textContent) {
-        this.poetName = poetName;
+
+    public Poem(int id, int poet_id, String title, String text, String date) {
+        this.id = id;
+        this.poet_id = poet_id;
         this.title = title;
-        this.textContent = textContent;
+        this.text = text;
+        this.date = date;
     }
 
-    public String getPoetName() {
-        return poetName;
+    public int getId() {
+        return id;
     }
 
-    public void setPoetName(String poetName) {
-        this.poetName = poetName;
+    public int getPoet_id() {
+        return poet_id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getText() {
+        return text;
     }
 
-    public String getTextContent() {
-        return textContent;
-    }
-
-    public void setTextContent(String textContent) {
-        this.textContent = textContent;
+    public String getDate() {
+        return date;
     }
 
     @Override
     public String toString() {
         return "Poem{" +
-                "poetName='" + poetName + '\'' +
+                "id=" + id +
+                ", poet_id=" + poet_id +
                 ", title='" + title + '\'' +
-                ", textContent='" + textContent + '\'' +
+                ", text='" + text + '\'' +
+                ", date='" + date + '\'' +
                 '}';
     }
 }
