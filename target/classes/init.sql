@@ -17,6 +17,7 @@ CREATE TABLE poems (
     poet_id INTEGER,
     title TEXT NOT NULL,
     poem TEXT,
+    release_date DATE NOT NULL,
     FOREIGN KEY (poet_id) REFERENCES users(id),
     CONSTRAINT title_not_empty CHECK (title <> '')
 );
@@ -26,7 +27,8 @@ INSERT INTO users (email, nickname, password) VALUES
 	('a', 'a', 'a'),
 	('b', 'b', 'b');
 
-INSERT INTO poems (poet_id, title, poem) VALUES
-    (1, 'The Bells', 'The bells! — ah, the bells!\n How fairy-like a melody there floats\n From their throats. — \n From their merry little throats — \n From the silver, tinkling throats\n Of the bells, bells, bells —\n Of the bells!\n'),
-    (2, 'The End', 'This is the end.');
+INSERT INTO poems (poet_id, title, poem, release_date) VALUES
+    (1, 'The Bells', 'The bells! — ah, the bells!\n How fairy-like a melody there floats\n From their throats. — \n From their merry little throats — \n From the silver, tinkling throats\n Of the bells, bells, bells —\n Of the bells!\n', '1845-01-29'),
+    (1, 'Random', 'If T is a complete enumeration type, provides a member typedef type that names the underlying type of T. Otherwise, the behavior is undefined.', '2008-03-04'),
+    (2, 'The End', 'This is the end.', '2011-12-20');
 

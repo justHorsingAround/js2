@@ -1,11 +1,10 @@
 function onLoginResponse() {
-    console.log(this.status);
     if (this.status === OK) {
         console.log(this);
         const user = JSON.parse(this.responseText);
 
         setAuthorization(user);
-        //onProfileLoad(user);
+        onProfileLoad(user);
     } else {
         onOtherResponse(loginDivEl, this);
     }
