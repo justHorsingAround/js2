@@ -3,7 +3,7 @@ package com.codecool.Model;
 import java.util.Objects;
 
 public class User {
-    private int id = -1;
+    private int id = 0;
     private String email;
     private String name = null;
     private String passw;
@@ -19,6 +19,22 @@ public class User {
     public User(String email, String passw) {
         this.email = email;
         this.passw = passw;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPassw() {
+        return passw;
     }
 
     @Override

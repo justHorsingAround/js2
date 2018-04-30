@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="${styleUrl}">
         <script src="${indexUrl}"></script>
         <script src="${loginUrl}"></script>
+        <title>App</title>
     </head>
 <body>
 <div id="login" class="content">

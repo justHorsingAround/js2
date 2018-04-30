@@ -1,5 +1,6 @@
 package com.codecool.Servlets;
 
+import com.codecool.Dto.MessageDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.ServletContext;
@@ -17,6 +18,26 @@ abstract class AbstractServlet extends HttpServlet {
     Connection getConnection(ServletContext sce) throws SQLException {
         DataSource dataSource = (DataSource) sce.getAttribute("dataSource");
         return dataSource.getConnection();
+    }
+
+    void sendMessage(HttpServletResponse resp, int status, String message) throws IOException {
+        sendMessage(resp, status, new MessageDto(message));
+    }
+
+    void sendMessage(HttpServletResponse resp, int status, Object object) throws IOException {
+        resp.setStatus(status);
+        try {
+            om.writeValue(resp.getOutputStream(), object);
+
+        } catch(IOException e) {
+            System.out.println(e.getMessage());
+            throw new IOException(e);
+        }
+    }
+
+    void handleSqlError(HttpServletResponse resp, SQLException ex) throws IOException {
+        sendMessage(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, ex.getMessage());
+        ex.printStackTrace();
     }
 
 }

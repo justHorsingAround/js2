@@ -23,13 +23,14 @@ public class UserService implements IUserService {
             registeredUsers = userDao.findAllUsers();
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new InvalidUserException();
+            throw new InvalidUserException("Database error");
         }
         for (User usr: registeredUsers) {
             if(usr.equals(currentLogin)){
                 return usr;
+
             }
         }
-        throw new InvalidUserException();
+        throw new InvalidUserException("Wrong user name or password");
     }
 }

@@ -3,9 +3,10 @@ com/codecool/Model/User.class
 com/codecool/Model/Poem.class
 com/codecool/Listener/WebappContextListener.class
 com/codecool/Servlets/LoginServlet.class
-com/codecool/Dao/AbstractDao.class
 com/codecool/Dao/IUserDao.class
-com/codecool/Services/Exceptions/InvalidUserException.class
 com/codecool/Services/UserService.class
-com/codecool/Servlets/AbstractServlet.class
 com/codecool/Services/IUserService.class
+com/codecool/Dao/AbstractDao.class
+com/codecool/Services/Exceptions/InvalidUserException.class
+com/codecool/Dto/MessageDto.class
+com/codecool/Servlets/AbstractServlet.class

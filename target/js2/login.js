@@ -1,12 +1,15 @@
-/*function onLoginResponse() {
+function onLoginResponse() {
+    console.log(this.status);
     if (this.status === OK) {
+        console.log(this);
         const user = JSON.parse(this.responseText);
+
         setAuthorization(user);
-        onProfileLoad(user);
+        //onProfileLoad(user);
     } else {
-        onOtherResponse(loginContentDivEl, this);
+        onOtherResponse(loginDivEl, this);
     }
-}*/
+}
 
 function onLoginButtonClicked() {
     const loginFormEl = document.forms['login-form'];
@@ -22,8 +25,8 @@ function onLoginButtonClicked() {
     params.append('password', password);
 
     const xhr = new XMLHttpRequest();
-    //xhr.addEventListener('load', onLoginResponse);
-    //xhr.addEventListener('error', onNetworkError);
+    xhr.addEventListener('load', onLoginResponse);
+    xhr.addEventListener('error', onNetworkError);
     xhr.open('POST', 'login');
     xhr.send(params);
 }

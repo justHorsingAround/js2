@@ -33,15 +33,16 @@ public final class LoginServlet extends AbstractServlet {
                 throw new NullPointerException("Failed to get parameter'password");
             }
 
+
             User user = uService.loginUser(email, password);
             req.getSession().setAttribute("user", user);
-            System.out.println(user);
 
+            sendMessage(resp, HttpServletResponse.SC_OK, user);
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            handleSqlError(resp, e);
         } catch (InvalidUserException e) {
-            System.out.println("invalid user");
+            sendMessage(resp, HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
         }
 
     }
