@@ -4,6 +4,7 @@ import com.codecool.Model.Poem;
 import com.codecool.Services.Exceptions.NoPoemFoundException;
 import com.codecool.Services.IPoemService;
 import com.codecool.Services.PoemService;
+import com.codecool.Servlets.Exceptions.UserIdInputIsNullException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,15 +20,14 @@ public class PoemServlet extends AbstractServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try(Connection connection = getConnection(req.getServletContext())){
-            System.out.println("before poem service");
             IPoemService ps = new PoemService(connection);
-            System.out.println("after poem service");
 
             String userId = req.getParameter("id");
-            System.out.println("userId" + userId);
-            /*if (userId == null){
-                throw new NullPointerException();
-            }*/
+            if (userId == null){
+                sendMessage(resp, HttpServletResponse.SC_BAD_REQUEST, "No input received");
+                throw new UserIdInputIsNullException();
+            }
+
             int userIntId = Integer.parseInt(userId);
             ps.setId(userIntId);
 
@@ -51,6 +51,10 @@ public class PoemServlet extends AbstractServlet {
         catch (IOException i){
             i.printStackTrace();
             throw new IOException(i);
+        }
+        catch (UserIdInputIsNullException u) {
+            sendMessage(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR,
+                    "Failed to recieve data from the client");
         }
     }
 }

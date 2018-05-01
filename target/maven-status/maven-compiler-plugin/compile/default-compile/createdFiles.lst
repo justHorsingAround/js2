@@ -10,6 +10,7 @@ com/codecool/Services/PoemService.class
 com/codecool/Dao/IUserDao.class
 com/codecool/Services/UserService.class
 com/codecool/Services/IUserService.class
+com/codecool/Servlets/Exceptions/UserIdInputIsNullException.class
 com/codecool/Services/Exceptions/IdIsNullException.class
 com/codecool/Servlets/PoemServlet.class
 com/codecool/Dao/AbstractDao.class

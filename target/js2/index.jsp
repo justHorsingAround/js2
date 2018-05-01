@@ -10,11 +10,13 @@
         <c:url value="/login.js" var="loginUrl"/>
         <c:url value="/profile.js" var="profileUrl"/>
         <c:url value="/title.js" var="titleUrl"/>
+        <c:url value="/filter.js" var="filterUrl"/>
         <link rel="stylesheet" type="text/css" href="${styleUrl}">
         <script src="${indexUrl}"></script>
         <script src="${loginUrl}"></script>
         <script src="${profileUrl}"></script>
         <script src="${titleUrl}"></script>
+        <script src="${filterUrl}"></script>
         <title>Poet</title>
     </head>
 <body>
@@ -34,6 +36,17 @@
     <div id="titles">
         <p><h3>Poems</h3><br>
         <p><div id="title-list"></div></p>
+        <p><div id="poem-content"></div></p>
+    </div>
+</div>
+
+<div id="search-content" class="hidden content">
+    <div id='filter'><p><h4>Filter</h4></p>
+        <form id="filter-form" onsubmit="return false;">
+            <input type="text" name="keyword">
+            <button id="filter-btn">Search</button>
+            <div id='result'></div>
+        </form>
     </div>
 </div>
 
