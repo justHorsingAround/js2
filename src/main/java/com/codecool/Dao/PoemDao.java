@@ -30,13 +30,12 @@ public class PoemDao extends AbstractDao implements IPoemDao {
 
     public List<Poem> findPoemsTitleByUserId(int id) throws SQLException {
         List<Poem> poems = new ArrayList<>();
-        String sql = "SELECT title, poems.id FROM poems JOIN users ON 1 = poems.poet_id GROUP BY title, poems.id ORDER BY title ASC";
+        String sql = "SELECT * FROM poems WHERE poems.poet_id = ? ORDER BY title ASC";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
-            //preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, id);
             try(ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     poems.add(assemblePoem(resultSet));
-
                 }
             }
         }
@@ -52,4 +51,7 @@ public class PoemDao extends AbstractDao implements IPoemDao {
         String date = resultSet.getString("release_date");
         return new Poem(id, poetId, title, text, date);
     }
+
+
+
 }

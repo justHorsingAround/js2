@@ -9,10 +9,12 @@
         <c:url value="/index.js" var="indexUrl"/>
         <c:url value="/login.js" var="loginUrl"/>
         <c:url value="/profile.js" var="profileUrl"/>
+        <c:url value="/title.js" var="titleUrl"/>
         <link rel="stylesheet" type="text/css" href="${styleUrl}">
         <script src="${indexUrl}"></script>
         <script src="${loginUrl}"></script>
         <script src="${profileUrl}"></script>
+        <script src="${titleUrl}"></script>
         <title>Poet</title>
     </head>
 <body>
@@ -31,9 +33,10 @@
     <p>Your secret password: <span id="password"></span></p>
     <div id="titles">
         <p><h3>Poems</h3><br>
-        <p><div="title-list"></div></p>
+        <p><div id="title-list"></div></p>
     </div>
 </div>
+
 
 </body>
 </html>

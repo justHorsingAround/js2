@@ -1,8 +1,8 @@
 package com.codecool.Model;
 
 public class Poem {
-   private int id;
-   private int poet_id;
+   private int id = -1;
+   private int poet_id = -1;
    private String title;
    private String text;
    private String date;
@@ -15,6 +15,8 @@ public class Poem {
         this.text = text;
         this.date = date;
     }
+
+
 
     public int getId() {
         return id;

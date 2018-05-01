@@ -17,7 +17,7 @@ import java.util.List;
 @WebServlet("/profile")
 public class PoemServlet extends AbstractServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try(Connection connection = getConnection(req.getServletContext())){
             System.out.println("before poem service");
             IPoemService ps = new PoemService(connection);
@@ -28,8 +28,8 @@ public class PoemServlet extends AbstractServlet {
             /*if (userId == null){
                 throw new NullPointerException();
             }*/
-            //int userIntId = Integer.parseInt(userId);
-            //ps.setId(userIntId);
+            int userIntId = Integer.parseInt(userId);
+            ps.setId(userIntId);
 
             List<Poem> result = ps.fetchPoem();
             System.out.println(result.size());

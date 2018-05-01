@@ -3,7 +3,9 @@ let userIdEl;
 function onTitleResponse() {
     const mainContentDivEl = document.getElementById("main-content");
     if (this.status === OK) {
-        console.log(this);
+        const poems = JSON.parse(this.responseText);
+
+        onPoemsLoad(poems);
     }
     else {
         onOtherResponse(mainContentDivEl, this);
@@ -34,12 +36,12 @@ function onProfileLoad(user) {
 
 function requestTitleContent() {
     const params = new URLSearchParams();
-    params.append('id', userIdEl.value);
+    params.append('id', userIdEl.innerText);
 
     const xhr = new XMLHttpRequest();
         xhr.addEventListener('load', onTitleResponse);
         xhr.addEventListener('error', onNetworkError);
-        xhr.open('GET', 'profile');
+        xhr.open('POST', 'profile');
         xhr.send(params);
 
 }
